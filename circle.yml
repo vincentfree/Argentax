@@ -1,0 +1,11 @@
+machine:
+  java:
+    version: oraclejdk8
+test:
+  post:
+    - mvn clean
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: foo-bar-123
