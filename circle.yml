@@ -4,10 +4,8 @@ machine:
 test:
   pre:
     - mvn spring-boot:run
-  post:
-    - mvn clean
 deployment:
   staging:
     branch: master
     heroku:
-      appname: foo-bar-123
+      appname: argentax
