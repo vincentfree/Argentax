@@ -1,9 +1,6 @@
 machine:
   java:
     version: oraclejdk8
-test:
-  pre:
-    - mvn spring-boot:run
 deployment:
   staging:
     branch: master
