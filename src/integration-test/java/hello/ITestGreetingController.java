@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
  * Created by Vincent on 21-6-2015.
  */
 @RunWith(SpringJUnit4ClassRunner.class)   // 1
-@SpringApplicationConfiguration(classes = SampleController.class)   // 2
+@SpringApplicationConfiguration(classes = Application.class)   // 2
 //@IfProfileValue(name="test-groups", values={"unit-tests", "integration-tests"})
 @WebAppConfiguration   // 3
 //@IntegrationTest("server.port:1")   // 4
