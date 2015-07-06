@@ -32,6 +32,7 @@ public class ApiTestSteps {
     @Given("^the website is active$")
     public void the_website_is_active() throws Throwable {
         // Express the Regexp above with the code you wish you had
+
         webDriver.manage().window().maximize();
         webDriver.get("http://localhost:8080/");
 
