@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 @SpringApplicationConfiguration(classes = Application.class)   // 2
 //@IfProfileValue(name="test-groups", values={"unit-tests", "integration-tests"})
 @WebAppConfiguration   // 3
-//@IntegrationTest("server.port:1")   // 4
+@IntegrationTest("server.port:1")   // 4
 public class ITestGreeting {
     Greeting greeting = new Greeting(1l, "Vincent Free");
     //GreetingController greetingController = new GreetingController();

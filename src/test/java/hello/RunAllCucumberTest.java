@@ -16,5 +16,5 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @CucumberOptions(
         features = "src/test/resources/",
         plugin = {"html:target/cukes", "json:target/cucumber/tests.cucumber"})
-public class RunAllCucumberTest {
+public class RunAllCucumberTest extends RunWithSpringJUnit4 {
 }

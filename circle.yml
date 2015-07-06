@@ -7,8 +7,6 @@ deployment:
     heroku:
       appname: argentax
 test:
-  pre:
-    - mvn spring-boot:run
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/test_report/
     - find . -type f -regex ".*/target/failsafe-reports/.*xml"  -exec cp {} $CIRCLE_TEST_REPORTS/test_report/ \;
