@@ -23,15 +23,32 @@ public class GreetingController {
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         greetings.add(new Greeting(counter.incrementAndGet(), String.format(template, name)));
-        return greetings.get(greetings.size()-1);
+        return greetings.get(greetings.size() - 1);
     }
 
     @RequestMapping("/all")
     public ArrayList all() {
         return greetings;
     }
+
     @RequestMapping("/removeall")
-    public void removeAll(){
+    public void removeAll() {
         greetings.clear();
+    }
+
+    @RequestMapping("/remove")
+    public void remove(@RequestParam(value = "remove") String name) {
+        int i = 0;
+        for (Greeting greet : greetings) {
+            if (greet.getContent().contains(name)) {
+                i = ((int) greet.getId() - 1);
+                System.out.println(greet.getContent());
+            }
+            if (i != 0) {
+                greetings.remove(i);
+            } else {
+                return;
+            }
+        }
     }
 }
