@@ -37,16 +37,14 @@ public class ApiTestSteps {
         webDriver.get("http://localhost:8080/");
 
     }
-
-
-    @When("^I want to add the name \"([^\"]*)\"$")
-    public void I_want_to_add_the_name(String name) throws Throwable {
-        webDriver.get("http://localhost:8080/greeting?name="+name);
+    @When("^I add the name \"([^\"]*)\"$")
+    public void I_add_the_name(String name) throws Throwable {
+        webDriver.get("http://localhost:8080/greeting?name=" + name);
     }
 
     @Then("^the name should be returned with an ID and the name \"([^\"]*)\"$")
     public void the_name_should_be_returned_with_an_ID_and_the_name(String name) throws Throwable {
         assertTrue("name should be"+name, webDriver.findElement(By.tagName("pre")).getText().contains(name));
-        assertFalse("false test for fuction",webDriver.findElement(By.tagName("pre")).getText().contains(new StringBuilder().append(name).reverse()));
+        assertFalse("false test for fuction", webDriver.findElement(By.tagName("pre")).getText().contains(new StringBuilder().append(name).reverse()));
     }
 }
