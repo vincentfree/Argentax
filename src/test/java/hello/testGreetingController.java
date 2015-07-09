@@ -3,17 +3,31 @@ package hello;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Vincent on 21-6-2015.
  */
 public class testGreetingController {
-    GreetingController greetingController = new GreetingController();
+
 
     @Test
     public void testGreeting() {
-        greetingController.greeting("test");
+        //GreetingController greetingController = new GreetingController();
+        //greetingController.greeting("test");
         assertEquals(1L, new GreetingController().greeting("f").getId());
         assertEquals("Hello testmessage!", new GreetingController().greeting("testmessage").getContent());
+    }
+
+    @Test
+    public void testRemove(){
+        GreetingController greetingRemove = new GreetingController();
+        //greetingRemove.greeting("remove");
+
+        assertEquals("Hello remove!", greetingRemove.greeting("remove").getContent());
+        assertFalse(greetingRemove.getByID(0).isEmpty());
+        greetingRemove.remove("remove");
+        assertTrue(GreetingController.getGreetings().isEmpty());
     }
 }
