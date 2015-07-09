@@ -170,6 +170,7 @@
                     <!-- Excludes integration tests when unit tests are run -->
                     <excludes>
                         <exclude>**/IT*.java</exclude>
+                        <exclude>**/RunAllCu*.java</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -208,6 +209,9 @@
                                 property is true
                             -->
                             <skipTests>${skip.integration.tests}</skipTests>
+                            <excludes>
+                                <exclude>**/RunAllCu*.java</exclude>
+                            </excludes>
                         </configuration>
                     </execution>
                 </executions>
