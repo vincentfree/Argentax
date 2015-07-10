@@ -37,12 +37,13 @@ public class testGreetingController {
         assertFalse(greetingRemove.getByID(0).isEmpty());
         greetingRemove.remove("remove");
         System.out.println(GreetingController.getGreetings().size());
+        System.out.println("");
         assertEquals(true, GreetingController.getGreetings().isEmpty());
     }
 
     @Test
     public void testGreetingList(){
         GreetingController greetingController = new GreetingController();
-        System.out.println(greetingController.greetinglist());
+        greetingController.greetinglist();
     }
 }

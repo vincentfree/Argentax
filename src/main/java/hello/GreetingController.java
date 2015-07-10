@@ -80,9 +80,14 @@ public class GreetingController {
 
 
     @RequestMapping("/greetinglist")
-    public String greetinglist() {
+    public void greetinglist() {
 
-        return "greeting" +'\n'+ "greeting?name=" +'\n'+ "all" +'\n'+ "remove?remove=" +'\n'+ "removeall" +'\n'+ "getByID?id=";
+        System.out.println("greeting");
+        System.out.println("greeting?name=");
+        System.out.println("all");
+        System.out.println("remove?remove=");
+        System.out.println("removeall");
+        System.out.println("getByID?id=");
     }
 
     //TODO testcase maken getByID
