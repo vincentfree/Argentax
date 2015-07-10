@@ -31,13 +31,12 @@ public class testGreetingController {
     @Test
     public void testRemove() {
         GreetingController greetingRemove = new GreetingController();
-        greetingRemove.removeAll();
+        GreetingController.getGreetings().clear();
         greetingRemove.greeting("remove");
         assertEquals("Hello remove!", greetingRemove.greeting("remove").getContent());
         assertFalse(greetingRemove.getByID(0).isEmpty());
         greetingRemove.remove("remove");
-        System.out.println(GreetingController.getGreetings().isEmpty());
-        assertTrue(GreetingController.getGreetings().isEmpty());
+        assertEquals(true,GreetingController.getGreetings().isEmpty());
     }
 
     @Test
