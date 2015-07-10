@@ -36,7 +36,8 @@ public class testGreetingController {
         assertEquals("Hello remove!", greetingRemove.greeting("remove").getContent());
         assertFalse(greetingRemove.getByID(0).isEmpty());
         greetingRemove.remove("remove");
-        assertEquals(true,GreetingController.getGreetings().isEmpty());
+        System.out.println(GreetingController.getGreetings().size());
+        assertEquals(true, GreetingController.getGreetings().isEmpty());
     }
 
     @Test
