@@ -78,7 +78,7 @@ public class GreetingController {
         greetings.remove(ID);
     }
 
-    
+
     @RequestMapping("/greetinglist")
     public String greetinglist() {
         return "greeting\r\ngreeting?name=\r\nall\r\nremove?remove=\r\nremoveall\r\ngetByID?id=";
