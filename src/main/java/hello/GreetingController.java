@@ -47,7 +47,7 @@ public class GreetingController {
     public void remove(@RequestParam(value = "remove", defaultValue = "") String name) {
         int i = 101010101;
         int[] x = new int[greetings.size()];
-        int up = greetings.size()-1;
+        int up = greetings.size() - 1;
         for (Greeting greet : greetings) {
             if (greet.getContent().contains(name)) {
                 i = ((int) greet.getId() - 1);
@@ -81,7 +81,8 @@ public class GreetingController {
 
     @RequestMapping("/greetinglist")
     public String greetinglist() {
-        return "greeting\r\ngreeting?name=\r\nall\r\nremove?remove=\r\nremoveall\r\ngetByID?id=";
+
+        return "greeting" +'\n'+ "greeting?name=" +'\n'+ "all" +'\n'+ "remove?remove=" +'\n'+ "removeall" +'\n'+ "getByID?id=";
     }
 
     //TODO testcase maken getByID
