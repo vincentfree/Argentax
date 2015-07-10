@@ -166,12 +166,15 @@
                     <threadCount>10</threadCount>
                     <argLine>-Xmx1024M</argLine>
                     <!-- Skips unit tests if the value of skip.unit.tests property is true -->
-                    <skipTests>${skip.unit.tests}</skipTests>
+                    <!--<skipTests>${skip.unit.tests}</skipTests>-->
                     <!-- Excludes integration tests when unit tests are run -->
                     <excludes>
-                        <!--<exclude>**/IT*.java</exclude>-->
+                        <exclude>**/IT*.java</exclude>
                         <exclude>**/RunAllCu*.java</exclude>
                     </excludes>
+                    <includes>
+                        <include>**/test*.java</include>
+                    </includes>
                 </configuration>
             </plugin>
             <plugin>

@@ -42,22 +42,32 @@ public class GreetingController {
         greetings.clear();
     }
 
-    //TODO testcase maken
+
     @RequestMapping("/remove")
     public void remove(@RequestParam(value = "remove", defaultValue = "") String name) {
         int i = 101010101;
+        int[] x = new int[greetings.size()];
+        int up = greetings.size()-1;
         for (Greeting greet : greetings) {
             if (greet.getContent().contains(name)) {
                 i = ((int) greet.getId() - 1);
-                System.out.println(greet.getContent());
+                //System.out.println(greet.getContent());
             }
             if (i != 101010101) {
-                greetings.remove(i);
-                break;
+                x[up] += i;
+                up--;
 
             } else {
                 return;
             }
+        }
+        for (int s : x) {
+            if (greetings.isEmpty()) {
+                break;
+            } else {
+                greetings.remove(s);
+            }
+
         }
 
     }
@@ -68,10 +78,10 @@ public class GreetingController {
         greetings.remove(ID);
     }
 
-    //TODO testcase maken
+    
     @RequestMapping("/greetinglist")
     public String greetinglist() {
-        return "greeting\ngreeting?name=\nall\nremove?remove=\nremoveall";
+        return "greeting\r\ngreeting?name=\r\nall\r\nremove?remove=\r\nremoveall\r\ngetByID?id=";
     }
 
     //TODO testcase maken getByID
