@@ -36,14 +36,31 @@ public class testGreetingController {
         assertEquals("Hello remove!", greetingRemove.greeting("remove").getContent());
         assertFalse(greetingRemove.getByID(0).isEmpty());
         greetingRemove.remove("remove");
-        System.out.println(GreetingController.getGreetings().size());
-        System.out.println("");
+        //System.out.println(GreetingController.getGreetings().size());
+        //System.out.println("");
         assertEquals(true, GreetingController.getGreetings().isEmpty());
     }
 
     @Test
-    public void testGreetingList(){
+    public void testGreetingList() {
         GreetingController greetingController = new GreetingController();
         greetingController.greetinglist();
+    }
+
+    @Test
+    public void testRemoveID() {
+        GreetingController greetingRemoveID = new GreetingController();
+        GreetingController.getGreetings().clear();
+        greetingRemoveID.greeting("RemoveID");
+        assertEquals("Hello RemoveID!", GreetingController.getGreetings().get(GreetingController.getGreetings().size() - 1).getContent());
+        greetingRemoveID.removeid((int) (GreetingController.getGreetings().get(GreetingController.getGreetings().size() - 1).getId() - 1));
+    }
+    @Test
+    public void testGetByID(){
+        GreetingController getByIDController = new GreetingController();
+        GreetingController.getGreetings().clear();
+        getByIDController.greeting("GetByID");
+        int i = (int)(GreetingController.getGreetings().get(GreetingController.getGreetings().size()-1).getId()-1);
+        assertEquals("Hello GetByID!",getByIDController.getByID(i));
     }
 }

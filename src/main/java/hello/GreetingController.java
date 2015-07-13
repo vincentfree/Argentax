@@ -1,5 +1,6 @@
 package hello;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -72,22 +73,22 @@ public class GreetingController {
 
     }
 
-    //TODO testcase maken
+    /**
+     *
+     * @param ID de ID die je wil verwijderen.
+     */
     @RequestMapping("/removeid")
     public void removeid(@RequestParam(value = "id") int ID) {
         greetings.remove(ID);
     }
 
-
+    /*
+    Greetinglist geeft een lijst van functies terug die te gebruiken zijn op de REST api.
+     */
     @RequestMapping("/greetinglist")
-    public void greetinglist() {
+    public String greetinglist() {
 
-        System.out.println("greeting");
-        System.out.println("greeting?name=");
-        System.out.println("all");
-        System.out.println("remove?remove=");
-        System.out.println("removeall");
-        System.out.println("getByID?id=");
+        return "greeting" +'\n'+ "greeting?name=" +'\n'+ "all" +'\n'+ "remove?remove=" +'\n'+ "removeall" +'\n'+ "getByID?id=";
     }
 
     //TODO testcase maken getByID
