@@ -93,6 +93,7 @@ public class GreetingController {
 
     //TODO testcase maken getByID
     @RequestMapping("/getByID")
+    //TODO Exeption handling maken voor wanneer hij array out of bound gaat
     public String getByID(@RequestParam(value = "id") int ID) {
 
         return greetings.get(ID).getContent();
