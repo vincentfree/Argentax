@@ -85,9 +85,8 @@ public class GreetingController {
     /*
     Greetinglist geeft een lijst van functies terug die te gebruiken zijn op de REST api.
      */
-    @RequestMapping("/greetinglist")
+    @RequestMapping("/list")
     public String greetinglist() {
-
         return "greeting" +'\n'+ "greeting?name=" +'\n'+ "all" +'\n'+ "remove?remove=" +'\n'+ "removeall" +'\n'+ "getByID?id=";
     }
 
