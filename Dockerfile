@@ -1,4 +1,8 @@
-From java:8
-COPY . /usr/src/argentax
+From maven:3-jdk-8
+RUN mkdir -p /usr/src/argentax
+#COPY . /usr/src/argentax
 WORKDIR /usr/src/argentax
-RUN javac Main.java
+ONBUILD ADD . /usr/src/argentax
+#RUN mvn spring-boot:run
+ONBUILD RUN mvn install
+ONBUILD RUN mvn spring-boot:run
