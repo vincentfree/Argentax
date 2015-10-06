@@ -1,4 +1,4 @@
-From maven:3-jdk-8
+FROM maven:3-jdk-8
 RUN mkdir -p /usr/src/argentax
 #COPY . /usr/src/argentax
 WORKDIR /usr/src/argentax
