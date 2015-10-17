@@ -11,5 +11,5 @@ RUN git clone https://github.com/vincentfree/Argentax.git /usr/src/argentax
 EXPOSE 8080
 VOLUME ["/usr/src/argentax"]
 RUN mvn clean install
-CMD ["mvn spring-boot:run"]
+CMD ["java -jar /usr/src/argentax/target/NewArgentaxWebsite-1.0-SNAPSHOT.jar"]
 #ONBUILD RUN mvn spring-boot:run
