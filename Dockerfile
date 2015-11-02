@@ -10,7 +10,7 @@ RUN apt-get -y update
 RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 boolean true" | debconf-set-selections
 # Install Oracle Java
 RUN apt-get -y install \
-oracle-java8-installer\
+oracle-java8-installer \
 maven
 RUN mkdir /usr/src/argentax
 EXPOSE 8080
