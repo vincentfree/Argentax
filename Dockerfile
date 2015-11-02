@@ -16,7 +16,8 @@ RUN mkdir /usr/src/argentax
 EXPOSE 8080
 VOLUME "/usr/src/argentax"
 ADD . /usr/src/argentax/
-CMD ["mvn","-f","/usr/src/argentax/","clean install"]
+ENTRYPOINT ["/usr/src/argentax/"]
+CMD ["mvn","clean install"]
 #ADD ./target/NewArgentaxWebsite-1.0-SNAPSHOT.jar /usr/src/argentax/
 #ADD target/NewArgentaxWebsite-1.0-SNAPSHOT.jar /usr/src/argentax/
 CMD ["java", "-jar", "/usr/src/argentax/target/NewArgentaxWebsite-1.0-SNAPSHOT.jar"]
