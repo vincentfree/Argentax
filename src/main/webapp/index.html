@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html ng-app="Application">
+
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.4/angular-route.min.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/index">Argentax</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#/list">Over</a></li>
+                <li><a href="#/about">Prijslijst</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div ng-view>
+    <img align="center" src="..\resources\Logo.png"/>
+    <img align="center" src="..\..\resources\argentumbanner.png"/>
+</div>
+
+<footer class="text-center">
+    Argentax Edelmetaal
+</footer>
+
+</body>
+
+</html>

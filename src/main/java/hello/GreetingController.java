@@ -74,7 +74,6 @@ public class GreetingController {
     }
 
     /**
-     *
      * @param ID de ID die je wil verwijderen.
      */
     @RequestMapping("/removeid")
@@ -87,7 +86,7 @@ public class GreetingController {
      */
     @RequestMapping("/list")
     public String greetinglist() {
-        return "greeting" +'\n'+ "greeting?name=" +'\n'+ "all" +'\n'+ "remove?remove=" +'\n'+ "removeall" +'\n'+ "getByID?id=";
+        return "greeting" + '\n' + "greeting?name=" + '\n' + "all" + '\n' + "remove?remove=" + '\n' + "removeall" + '\n' + "getByID?id=";
     }
 
     //TODO testcase maken getByID

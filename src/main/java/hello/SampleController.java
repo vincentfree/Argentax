@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 public class SampleController {
 
-    @RequestMapping("/")
+   /* @RequestMapping("/hello")
     @ResponseBody
     String home() {
         return "Hello World!";
     }
 
-    /*public static void main(String[] args) throws Exception {
+    *//*public static void main(String[] args) throws Exception {
         SpringApplication.run(SampleController.class, args);
     }*/
 }
