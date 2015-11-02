@@ -9,13 +9,18 @@ RUN apt-get -y update
 # Accept the Oracle Java license
 RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 boolean true" | debconf-set-selections
 # Install Oracle Java
-RUN apt-get -y install oracle-java8-installer
+RUN apt-get -y install \
+oracle-java8-installer\
+maven
 RUN mkdir /usr/src/argentax
 EXPOSE 8080
 VOLUME "/usr/src/argentax"
-ADD ./target/NewArgentaxWebsite-1.0-SNAPSHOT.jar /usr/src/argentax/
+ADD . /usr/src/argentax/
+CMD ["mvn","-f","/usr/src/argentax/","clean install"]
+#ADD ./target/NewArgentaxWebsite-1.0-SNAPSHOT.jar /usr/src/argentax/
 #ADD target/NewArgentaxWebsite-1.0-SNAPSHOT.jar /usr/src/argentax/
-CMD ["java", "-jar", "/usr/src/argentax/NewArgentaxWebsite-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "/usr/src/argentax/target/NewArgentaxWebsite-1.0-SNAPSHOT.jar"]
+#CMD ["java", "-jar", "/usr/src/argentax/NewArgentaxWebsite-1.0-SNAPSHOT.jar"]
 
 #FROM maven:3-jdk-8
 #MAINTAINER Vincent Free "vincentfree87@gmail.com"
