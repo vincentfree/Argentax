@@ -16,11 +16,12 @@ ADD . /home/src/argentax
 WORKDIR /home/src/argentax
 #ENTRYPOINT ["/home/src/argentax"]
 CMD ["mvn","clean install"]
+CMD ["mvn","spring-boot:run"]
 #ADD ./target/NewArgentaxWebsite-1.0-SNAPSHOT.jar /usr/src/argentax/
 #ADD target/NewArgentaxWebsite-1.0-SNAPSHOT.jar /usr/src/argentax/
-CMD ["java", "-jar", "/home/src/argentax/target/NewArgentaxWebsite-1.0-SNAPSHOT.jar"]
+#CMD ["java", "-jar", "/home/src/argentax/target/NewArgentaxWebsite-1.0-SNAPSHOT.jar"]
 #CMD ["java", "-jar", "/usr/src/argentax/NewArgentaxWebsite-1.0-SNAPSHOT.jar"]
-#VOLUME "/home/src/argentax/"
+VOLUME "/home/src/argentax/"
 #FROM maven:3-jdk-8
 #MAINTAINER Vincent Free "vincentfree87@gmail.com"
 #RUN mkdir -p /usr/src/argentax
